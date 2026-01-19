@@ -1,0 +1,197 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "data": {
+    "values": [
+      {
+        "label": "OTHER ITEM",
+        "value": 115476835.26
+      },
+      {
+        "label": "ASTRAL LIMITED",
+        "value": -22422920.84
+      },
+      {
+        "label": "XIAMEN MINZHONG - WF",
+        "value": -10588765.66
+      },
+      {
+        "label": "Retrofit",
+        "value": -10512090.0
+      },
+      {
+        "label": "Asahi Valves",
+        "value": -10293265.76
+      },
+      {
+        "label": "SEKISUI FITTING",
+        "value": -9143171.35
+      },
+      {
+        "label": "ESSAR ITEM",
+        "value": -8605811.06
+      },
+      {
+        "label": "ROTEX",
+        "value": -8000000.0
+      },
+      {
+        "label": "FRANK",
+        "value": -5318737.38
+      },
+      {
+        "label": "AGRU",
+        "value": -3636721.02
+      },
+      {
+        "label": "POLYPIPE ITALIA",
+        "value": -2486395.11
+      },
+      {
+        "label": "CS FASTENERS (ML",
+        "value": 1900000.0
+      },
+      {
+        "label": "XIAMEN KEHENG-  (WF)",
+        "value": -1222443.27
+      },
+      {
+        "label": "ROECHLING",
+        "value": -835926.0
+      },
+      {
+        "label": "RAJDEEP ITEMS",
+        "value": -779903.24
+      },
+      {
+        "label": "AVCON ITEMS",
+        "value": -408920.47
+      },
+      {
+        "label": "PPPS ENGINEERS PRIVATE LIMITED",
+        "value": -369000.6
+      },
+      {
+        "label": "Zenith Irrigation",
+        "value": -340853.74
+      },
+      {
+        "label": "PP PIPE FITTING & VALVES",
+        "value": -318304.86
+      },
+      {
+        "label": "HYDROSEAL VALVES",
+        "value": -298087.17
+      },
+      {
+        "label": "Nipple",
+        "value": -242317.29
+      },
+      {
+        "label": "Alliance",
+        "value": -228718.68
+      },
+      {
+        "label": "Pneucon Actuator Valve",
+        "value": -215900.0
+      },
+      {
+        "label": "CPVC CORZAN",
+        "value": -172885.89
+      },
+      {
+        "label": "Polymold Item",
+        "value": -139599.49
+      },
+      {
+        "label": "Other Fittings",
+        "value": -137298.48
+      },
+      {
+        "label": "FLOWCOLOUR",
+        "value": -133560.17
+      },
+      {
+        "label": "DELTA FLOW",
+        "value": -105557.0
+      },
+      {
+        "label": "PRINCE",
+        "value": -78983.15
+      },
+      {
+        "label": "ASAHI ASIA PACIFIC",
+        "value": -77822.1
+      },
+      {
+        "label": "Bush Fittings",
+        "value": -76083.08
+      },
+      {
+        "label": "PRASHANT PLASTIC IND LLP",
+        "value": -35659.2
+      },
+      {
+        "label": "PPR",
+        "value": -30504.0
+      },
+      {
+        "label": "Other Valves",
+        "value": -26690.0
+      },
+      {
+        "label": "Ashirwad Make(Prince)",
+        "value": -20994.24
+      },
+      {
+        "label": "Zhejiang",
+        "value": -20476.9
+      },
+      {
+        "label": "NUT BOLT",
+        "value": -19174.0
+      },
+      {
+        "label": "KRISHNA ENTP",
+        "value": -17442.0
+      },
+      {
+        "label": "HDPE PIPE FITTING & VALVES",
+        "value": -16634.19
+      },
+      {
+        "label": "SANKING",
+        "value": -12010.34
+      },
+      {
+        "label": "Varad",
+        "value": -11000.0
+      },
+      {
+        "label": "DUTRON",
+        "value": -9371.25
+      }
+    ]
+  },
+  "mark": "bar",
+  "encoding": {
+    "x": {
+      "field": "label",
+      "type": "nominal",
+      "sort": "-y"
+    },
+    "y": {
+      "field": "value",
+      "type": "quantitative"
+    },
+    "tooltip": [
+      {
+        "field": "label",
+        "type": "nominal"
+      },
+      {
+        "field": "value",
+        "type": "quantitative"
+      }
+    ]
+  }
+}

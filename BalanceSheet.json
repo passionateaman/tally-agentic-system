@@ -1,0 +1,188 @@
+{
+    "ENVELOPE": {
+        "BSNAME": [
+            {
+                "DSPACCNAME": {
+                    "DSPDISPNAME": "Capital Account"
+                }
+            },
+            {
+                "DSPACCNAME": {
+                    "DSPDISPNAME": "Owner's Capital Account"
+                }
+            },
+            {
+                "DSPACCNAME": {
+                    "DSPDISPNAME": "Loans (Liability)"
+                }
+            },
+            {
+                "DSPACCNAME": {
+                    "DSPDISPNAME": "SBI Bank Loan Account"
+                }
+            },
+            {
+                "DSPACCNAME": {
+                    "DSPDISPNAME": "Profit & Loss A/c"
+                }
+            },
+            {
+                "DSPACCNAME": {
+                    "DSPDISPNAME": "Fixed Assets"
+                }
+            },
+            {
+                "DSPACCNAME": {
+                    "DSPDISPNAME": "Computers"
+                }
+            },
+            {
+                "DSPACCNAME": {
+                    "DSPDISPNAME": "Furniture and Fixture"
+                }
+            },
+            {
+                "DSPACCNAME": {
+                    "DSPDISPNAME": "Tally.ERP 9 Single User Software"
+                }
+            },
+            {
+                "DSPACCNAME": {
+                    "DSPDISPNAME": "Working Capital"
+                }
+            },
+            {
+                "DSPACCNAME": {
+                    "DSPDISPNAME": "Current Assets"
+                }
+            },
+            {
+                "DSPACCNAME": {
+                    "DSPDISPNAME": "Closing Stock"
+                }
+            },
+            {
+                "DSPACCNAME": {
+                    "DSPDISPNAME": "Sundry Debtors"
+                }
+            },
+            {
+                "DSPACCNAME": {
+                    "DSPDISPNAME": "Cash"
+                }
+            },
+            {
+                "DSPACCNAME": {
+                    "DSPDISPNAME": "Bank Accounts"
+                }
+            },
+            {
+                "DSPACCNAME": {
+                    "DSPDISPNAME": "Input CGST"
+                }
+            },
+            {
+                "DSPACCNAME": {
+                    "DSPDISPNAME": "Input SGST"
+                }
+            },
+            {
+                "DSPACCNAME": {
+                    "DSPDISPNAME": "Less :Current Liabilities"
+                }
+            },
+            {
+                "DSPACCNAME": {
+                    "DSPDISPNAME": "Duties & Taxes"
+                }
+            },
+            {
+                "DSPACCNAME": {
+                    "DSPDISPNAME": "Sundry Creditors"
+                }
+            }
+        ],
+        "BSAMT": [
+            {
+                "BSSUBAMT": null,
+                "BSMAINAMT": "5000000.00"
+            },
+            {
+                "BSSUBAMT": "5000000.00",
+                "BSMAINAMT": null
+            },
+            {
+                "BSSUBAMT": null,
+                "BSMAINAMT": "69590.56"
+            },
+            {
+                "BSSUBAMT": "69590.56",
+                "BSMAINAMT": null
+            },
+            {
+                "BSSUBAMT": null,
+                "BSMAINAMT": "-887929.09"
+            },
+            {
+                "BSSUBAMT": null,
+                "BSMAINAMT": "-213000.00"
+            },
+            {
+                "BSSUBAMT": "-150000.00",
+                "BSMAINAMT": null
+            },
+            {
+                "BSSUBAMT": "-45000.00",
+                "BSMAINAMT": null
+            },
+            {
+                "BSSUBAMT": "-18000.00",
+                "BSMAINAMT": null
+            },
+            {
+                "BSSUBAMT": null,
+                "BSMAINAMT": "-5907661.47"
+            },
+            {
+                "BSSUBAMT": null,
+                "BSMAINAMT": null
+            },
+            {
+                "BSSUBAMT": "-742091.37",
+                "BSMAINAMT": null
+            },
+            {
+                "BSSUBAMT": "-267763.88",
+                "BSMAINAMT": null
+            },
+            {
+                "BSSUBAMT": "-93972.76",
+                "BSMAINAMT": null
+            },
+            {
+                "BSSUBAMT": "-5151292.26",
+                "BSMAINAMT": null
+            },
+            {
+                "BSSUBAMT": "-8354.00",
+                "BSMAINAMT": null
+            },
+            {
+                "BSSUBAMT": "-8354.00",
+                "BSMAINAMT": null
+            },
+            {
+                "BSSUBAMT": null,
+                "BSMAINAMT": null
+            },
+            {
+                "BSSUBAMT": "32165.00",
+                "BSMAINAMT": null
+            },
+            {
+                "BSSUBAMT": "332001.80",
+                "BSMAINAMT": null
+            }
+        ]
+    }
+}

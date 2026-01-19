@@ -1,0 +1,908 @@
+{
+  "report": {
+    "ENVELOPE": {
+      "DSPACCNAME": [
+        {
+          "DSPDISPNAME": "AGRU"
+        },
+        {
+          "DSPDISPNAME": "Alliance"
+        },
+        {
+          "DSPDISPNAME": "ASAHI ASIA PACIFIC"
+        },
+        {
+          "DSPDISPNAME": "Asahi Valves"
+        },
+        {
+          "DSPDISPNAME": "Ashirwad Make(Prince)"
+        },
+        {
+          "DSPDISPNAME": "ASTRAL LIMITED"
+        },
+        {
+          "DSPDISPNAME": "AVCON ITEMS"
+        },
+        {
+          "DSPDISPNAME": "CPVC CORZAN"
+        },
+        {
+          "DSPDISPNAME": "DELTA FLOW"
+        },
+        {
+          "DSPDISPNAME": "DUTRON"
+        },
+        {
+          "DSPDISPNAME": "ESSAR ITEM"
+        },
+        {
+          "DSPDISPNAME": "FLOWCOLOUR"
+        },
+        {
+          "DSPDISPNAME": "FRANK"
+        },
+        {
+          "DSPDISPNAME": "GRP/FRP"
+        },
+        {
+          "DSPDISPNAME": "HDPE PIPE FITTING & VALVES"
+        },
+        {
+          "DSPDISPNAME": "HYDROSEAL VALVES"
+        },
+        {
+          "DSPDISPNAME": "KRISHNA ENTP"
+        },
+        {
+          "DSPDISPNAME": "Nipple"
+        },
+        {
+          "DSPDISPNAME": "NUT BOLT"
+        },
+        {
+          "DSPDISPNAME": "Other Fittings"
+        },
+        {
+          "DSPDISPNAME": "OTHER ITEM"
+        },
+        {
+          "DSPDISPNAME": "Other Valves"
+        },
+        {
+          "DSPDISPNAME": "Pneucon Actuator Valve"
+        },
+        {
+          "DSPDISPNAME": "Polymold Item"
+        },
+        {
+          "DSPDISPNAME": "POLYPIPE ITALIA"
+        },
+        {
+          "DSPDISPNAME": "PP PIPE FITTING & VALVES"
+        },
+        {
+          "DSPDISPNAME": "PPPS ENGINEERS PRIVATE LIMITED"
+        },
+        {
+          "DSPDISPNAME": "PPR"
+        },
+        {
+          "DSPDISPNAME": "PRASHANT PLASTIC IND LLP"
+        },
+        {
+          "DSPDISPNAME": "PRINCE"
+        },
+        {
+          "DSPDISPNAME": "RAJDEEP ITEMS"
+        },
+        {
+          "DSPDISPNAME": "Retrofit"
+        },
+        {
+          "DSPDISPNAME": "ROECHLING"
+        },
+        {
+          "DSPDISPNAME": "ROTEX"
+        },
+        {
+          "DSPDISPNAME": "SANKING"
+        },
+        {
+          "DSPDISPNAME": "SEKISUI FITTING"
+        },
+        {
+          "DSPDISPNAME": "Varad"
+        },
+        {
+          "DSPDISPNAME": "XIAMEN KEHENG-  (WF)"
+        },
+        {
+          "DSPDISPNAME": "XIAMEN MINZHONG - WF"
+        },
+        {
+          "DSPDISPNAME": "Zenith Irrigation"
+        },
+        {
+          "DSPDISPNAME": "Zhejiang"
+        },
+        {
+          "DSPDISPNAME": "315MM PIPE(INNER PLAIN)450 N WITH RR(6 M)ORG/ORG"
+        },
+        {
+          "DSPDISPNAME": "Bush Fittings"
+        },
+        {
+          "DSPDISPNAME": "CS FASTENERS (ML"
+        }
+      ],
+      "DSPSTKINFO": [
+        {
+          "DSPSTKCL": {
+            "DSPCLQTY": null,
+            "DSPCLRATE": null,
+            "DSPCLAMTA": "-3636721.02"
+          }
+        },
+        {
+          "DSPSTKCL": {
+            "DSPCLQTY": null,
+            "DSPCLRATE": null,
+            "DSPCLAMTA": "-228718.68"
+          }
+        },
+        {
+          "DSPSTKCL": {
+            "DSPCLQTY": "383.000 PCS",
+            "DSPCLRATE": "203.19",
+            "DSPCLAMTA": "-77822.10"
+          }
+        },
+        {
+          "DSPSTKCL": {
+            "DSPCLQTY": null,
+            "DSPCLRATE": null,
+            "DSPCLAMTA": "-10293265.76"
+          }
+        },
+        {
+          "DSPSTKCL": {
+            "DSPCLQTY": "2.000 Nos",
+            "DSPCLRATE": "10497.12",
+            "DSPCLAMTA": "-20994.24"
+          }
+        },
+        {
+          "DSPSTKCL": {
+            "DSPCLQTY": null,
+            "DSPCLRATE": null,
+            "DSPCLAMTA": "-22422920.84"
+          }
+        },
+        {
+          "DSPSTKCL": {
+            "DSPCLQTY": null,
+            "DSPCLRATE": null,
+            "DSPCLAMTA": "-408920.47"
+          }
+        },
+        {
+          "DSPSTKCL": {
+            "DSPCLQTY": null,
+            "DSPCLRATE": null,
+            "DSPCLAMTA": "-172885.89"
+          }
+        },
+        {
+          "DSPSTKCL": {
+            "DSPCLQTY": null,
+            "DSPCLRATE": null,
+            "DSPCLAMTA": "-105557.00"
+          }
+        },
+        {
+          "DSPSTKCL": {
+            "DSPCLQTY": null,
+            "DSPCLRATE": null,
+            "DSPCLAMTA": "-9371.25"
+          }
+        },
+        {
+          "DSPSTKCL": {
+            "DSPCLQTY": "13312.000 Nos",
+            "DSPCLRATE": "646.47",
+            "DSPCLAMTA": "-8605811.06"
+          }
+        },
+        {
+          "DSPSTKCL": {
+            "DSPCLQTY": "570.000 PCS",
+            "DSPCLRATE": "234.32",
+            "DSPCLAMTA": "-133560.17"
+          }
+        },
+        {
+          "DSPSTKCL": {
+            "DSPCLQTY": null,
+            "DSPCLRATE": null,
+            "DSPCLAMTA": "-5318737.38"
+          }
+        },
+        {
+          "DSPSTKCL": {
+            "DSPCLQTY": "-200.000 Sq.mtrs",
+            "DSPCLRATE": null,
+            "DSPCLAMTA": null
+          }
+        },
+        {
+          "DSPSTKCL": {
+            "DSPCLQTY": null,
+            "DSPCLRATE": null,
+            "DSPCLAMTA": "-16634.19"
+          }
+        },
+        {
+          "DSPSTKCL": {
+            "DSPCLQTY": null,
+            "DSPCLRATE": null,
+            "DSPCLAMTA": "-298087.17"
+          }
+        },
+        {
+          "DSPSTKCL": {
+            "DSPCLQTY": null,
+            "DSPCLRATE": null,
+            "DSPCLAMTA": "-17442.00"
+          }
+        },
+        {
+          "DSPSTKCL": {
+            "DSPCLQTY": null,
+            "DSPCLRATE": null,
+            "DSPCLAMTA": "-242317.29"
+          }
+        },
+        {
+          "DSPSTKCL": {
+            "DSPCLQTY": null,
+            "DSPCLRATE": null,
+            "DSPCLAMTA": "-19174.00"
+          }
+        },
+        {
+          "DSPSTKCL": {
+            "DSPCLQTY": null,
+            "DSPCLRATE": null,
+            "DSPCLAMTA": "-137298.48"
+          }
+        },
+        {
+          "DSPSTKCL": {
+            "DSPCLQTY": null,
+            "DSPCLRATE": null,
+            "DSPCLAMTA": "115476835.26"
+          }
+        },
+        {
+          "DSPSTKCL": {
+            "DSPCLQTY": null,
+            "DSPCLRATE": null,
+            "DSPCLAMTA": "-26690.00"
+          }
+        },
+        {
+          "DSPSTKCL": {
+            "DSPCLQTY": null,
+            "DSPCLRATE": null,
+            "DSPCLAMTA": "-215900.00"
+          }
+        },
+        {
+          "DSPSTKCL": {
+            "DSPCLQTY": "273.000 Nos",
+            "DSPCLRATE": "511.35",
+            "DSPCLAMTA": "-139599.49"
+          }
+        },
+        {
+          "DSPSTKCL": {
+            "DSPCLQTY": null,
+            "DSPCLRATE": null,
+            "DSPCLAMTA": "-2486395.11"
+          }
+        },
+        {
+          "DSPSTKCL": {
+            "DSPCLQTY": null,
+            "DSPCLRATE": null,
+            "DSPCLAMTA": "-318304.86"
+          }
+        },
+        {
+          "DSPSTKCL": {
+            "DSPCLQTY": null,
+            "DSPCLRATE": null,
+            "DSPCLAMTA": "-369000.60"
+          }
+        },
+        {
+          "DSPSTKCL": {
+            "DSPCLQTY": "12.000 Nos",
+            "DSPCLRATE": "2542.00",
+            "DSPCLAMTA": "-30504.00"
+          }
+        },
+        {
+          "DSPSTKCL": {
+            "DSPCLQTY": "32.000 Nos",
+            "DSPCLRATE": "1114.35",
+            "DSPCLAMTA": "-35659.20"
+          }
+        },
+        {
+          "DSPSTKCL": {
+            "DSPCLQTY": null,
+            "DSPCLRATE": null,
+            "DSPCLAMTA": "-78983.15"
+          }
+        },
+        {
+          "DSPSTKCL": {
+            "DSPCLQTY": "-63.000 Nos",
+            "DSPCLRATE": "12379.42",
+            "DSPCLAMTA": "-779903.24"
+          }
+        },
+        {
+          "DSPSTKCL": {
+            "DSPCLQTY": null,
+            "DSPCLRATE": null,
+            "DSPCLAMTA": "-10512090.00"
+          }
+        },
+        {
+          "DSPSTKCL": {
+            "DSPCLQTY": null,
+            "DSPCLRATE": null,
+            "DSPCLAMTA": "-835926.00"
+          }
+        },
+        {
+          "DSPSTKCL": {
+            "DSPCLQTY": null,
+            "DSPCLRATE": null,
+            "DSPCLAMTA": "-8000000.00"
+          }
+        },
+        {
+          "DSPSTKCL": {
+            "DSPCLQTY": null,
+            "DSPCLRATE": null,
+            "DSPCLAMTA": "-12010.34"
+          }
+        },
+        {
+          "DSPSTKCL": {
+            "DSPCLQTY": null,
+            "DSPCLRATE": null,
+            "DSPCLAMTA": "-9143171.35"
+          }
+        },
+        {
+          "DSPSTKCL": {
+            "DSPCLQTY": null,
+            "DSPCLRATE": null,
+            "DSPCLAMTA": "-11000.00"
+          }
+        },
+        {
+          "DSPSTKCL": {
+            "DSPCLQTY": null,
+            "DSPCLRATE": null,
+            "DSPCLAMTA": "-1222443.27"
+          }
+        },
+        {
+          "DSPSTKCL": {
+            "DSPCLQTY": null,
+            "DSPCLRATE": null,
+            "DSPCLAMTA": "-10588765.66"
+          }
+        },
+        {
+          "DSPSTKCL": {
+            "DSPCLQTY": null,
+            "DSPCLRATE": null,
+            "DSPCLAMTA": "-340853.74"
+          }
+        },
+        {
+          "DSPSTKCL": {
+            "DSPCLQTY": null,
+            "DSPCLRATE": null,
+            "DSPCLAMTA": "-20476.90"
+          }
+        },
+        {
+          "DSPSTKCL": {
+            "DSPCLQTY": "-100.000 Mtr",
+            "DSPCLRATE": null,
+            "DSPCLAMTA": null
+          }
+        },
+        {
+          "DSPSTKCL": {
+            "DSPCLQTY": "3.000 Nos",
+            "DSPCLRATE": "25361.03",
+            "DSPCLAMTA": "-76083.08"
+          }
+        },
+        {
+          "DSPSTKCL": {
+            "DSPCLQTY": null,
+            "DSPCLRATE": null,
+            "DSPCLAMTA": "1900000.00"
+          }
+        }
+      ]
+    }
+  },
+  "report_used": "Stock Summary",
+  "meta": {
+    "attempts": {
+      "Stock Summary": [
+        {
+          "static_vars": null,
+          "result": {
+            "ENVELOPE": {
+              "DSPACCNAME": [
+                {
+                  "DSPDISPNAME": "AGRU"
+                },
+                {
+                  "DSPDISPNAME": "Alliance"
+                },
+                {
+                  "DSPDISPNAME": "ASAHI ASIA PACIFIC"
+                },
+                {
+                  "DSPDISPNAME": "Asahi Valves"
+                },
+                {
+                  "DSPDISPNAME": "Ashirwad Make(Prince)"
+                },
+                {
+                  "DSPDISPNAME": "ASTRAL LIMITED"
+                },
+                {
+                  "DSPDISPNAME": "AVCON ITEMS"
+                },
+                {
+                  "DSPDISPNAME": "CPVC CORZAN"
+                },
+                {
+                  "DSPDISPNAME": "DELTA FLOW"
+                },
+                {
+                  "DSPDISPNAME": "DUTRON"
+                },
+                {
+                  "DSPDISPNAME": "ESSAR ITEM"
+                },
+                {
+                  "DSPDISPNAME": "FLOWCOLOUR"
+                },
+                {
+                  "DSPDISPNAME": "FRANK"
+                },
+                {
+                  "DSPDISPNAME": "GRP/FRP"
+                },
+                {
+                  "DSPDISPNAME": "HDPE PIPE FITTING & VALVES"
+                },
+                {
+                  "DSPDISPNAME": "HYDROSEAL VALVES"
+                },
+                {
+                  "DSPDISPNAME": "KRISHNA ENTP"
+                },
+                {
+                  "DSPDISPNAME": "Nipple"
+                },
+                {
+                  "DSPDISPNAME": "NUT BOLT"
+                },
+                {
+                  "DSPDISPNAME": "Other Fittings"
+                },
+                {
+                  "DSPDISPNAME": "OTHER ITEM"
+                },
+                {
+                  "DSPDISPNAME": "Other Valves"
+                },
+                {
+                  "DSPDISPNAME": "Pneucon Actuator Valve"
+                },
+                {
+                  "DSPDISPNAME": "Polymold Item"
+                },
+                {
+                  "DSPDISPNAME": "POLYPIPE ITALIA"
+                },
+                {
+                  "DSPDISPNAME": "PP PIPE FITTING & VALVES"
+                },
+                {
+                  "DSPDISPNAME": "PPPS ENGINEERS PRIVATE LIMITED"
+                },
+                {
+                  "DSPDISPNAME": "PPR"
+                },
+                {
+                  "DSPDISPNAME": "PRASHANT PLASTIC IND LLP"
+                },
+                {
+                  "DSPDISPNAME": "PRINCE"
+                },
+                {
+                  "DSPDISPNAME": "RAJDEEP ITEMS"
+                },
+                {
+                  "DSPDISPNAME": "Retrofit"
+                },
+                {
+                  "DSPDISPNAME": "ROECHLING"
+                },
+                {
+                  "DSPDISPNAME": "ROTEX"
+                },
+                {
+                  "DSPDISPNAME": "SANKING"
+                },
+                {
+                  "DSPDISPNAME": "SEKISUI FITTING"
+                },
+                {
+                  "DSPDISPNAME": "Varad"
+                },
+                {
+                  "DSPDISPNAME": "XIAMEN KEHENG-  (WF)"
+                },
+                {
+                  "DSPDISPNAME": "XIAMEN MINZHONG - WF"
+                },
+                {
+                  "DSPDISPNAME": "Zenith Irrigation"
+                },
+                {
+                  "DSPDISPNAME": "Zhejiang"
+                },
+                {
+                  "DSPDISPNAME": "315MM PIPE(INNER PLAIN)450 N WITH RR(6 M)ORG/ORG"
+                },
+                {
+                  "DSPDISPNAME": "Bush Fittings"
+                },
+                {
+                  "DSPDISPNAME": "CS FASTENERS (ML"
+                }
+              ],
+              "DSPSTKINFO": [
+                {
+                  "DSPSTKCL": {
+                    "DSPCLQTY": null,
+                    "DSPCLRATE": null,
+                    "DSPCLAMTA": "-3636721.02"
+                  }
+                },
+                {
+                  "DSPSTKCL": {
+                    "DSPCLQTY": null,
+                    "DSPCLRATE": null,
+                    "DSPCLAMTA": "-228718.68"
+                  }
+                },
+                {
+                  "DSPSTKCL": {
+                    "DSPCLQTY": "383.000 PCS",
+                    "DSPCLRATE": "203.19",
+                    "DSPCLAMTA": "-77822.10"
+                  }
+                },
+                {
+                  "DSPSTKCL": {
+                    "DSPCLQTY": null,
+                    "DSPCLRATE": null,
+                    "DSPCLAMTA": "-10293265.76"
+                  }
+                },
+                {
+                  "DSPSTKCL": {
+                    "DSPCLQTY": "2.000 Nos",
+                    "DSPCLRATE": "10497.12",
+                    "DSPCLAMTA": "-20994.24"
+                  }
+                },
+                {
+                  "DSPSTKCL": {
+                    "DSPCLQTY": null,
+                    "DSPCLRATE": null,
+                    "DSPCLAMTA": "-22422920.84"
+                  }
+                },
+                {
+                  "DSPSTKCL": {
+                    "DSPCLQTY": null,
+                    "DSPCLRATE": null,
+                    "DSPCLAMTA": "-408920.47"
+                  }
+                },
+                {
+                  "DSPSTKCL": {
+                    "DSPCLQTY": null,
+                    "DSPCLRATE": null,
+                    "DSPCLAMTA": "-172885.89"
+                  }
+                },
+                {
+                  "DSPSTKCL": {
+                    "DSPCLQTY": null,
+                    "DSPCLRATE": null,
+                    "DSPCLAMTA": "-105557.00"
+                  }
+                },
+                {
+                  "DSPSTKCL": {
+                    "DSPCLQTY": null,
+                    "DSPCLRATE": null,
+                    "DSPCLAMTA": "-9371.25"
+                  }
+                },
+                {
+                  "DSPSTKCL": {
+                    "DSPCLQTY": "13312.000 Nos",
+                    "DSPCLRATE": "646.47",
+                    "DSPCLAMTA": "-8605811.06"
+                  }
+                },
+                {
+                  "DSPSTKCL": {
+                    "DSPCLQTY": "570.000 PCS",
+                    "DSPCLRATE": "234.32",
+                    "DSPCLAMTA": "-133560.17"
+                  }
+                },
+                {
+                  "DSPSTKCL": {
+                    "DSPCLQTY": null,
+                    "DSPCLRATE": null,
+                    "DSPCLAMTA": "-5318737.38"
+                  }
+                },
+                {
+                  "DSPSTKCL": {
+                    "DSPCLQTY": "-200.000 Sq.mtrs",
+                    "DSPCLRATE": null,
+                    "DSPCLAMTA": null
+                  }
+                },
+                {
+                  "DSPSTKCL": {
+                    "DSPCLQTY": null,
+                    "DSPCLRATE": null,
+                    "DSPCLAMTA": "-16634.19"
+                  }
+                },
+                {
+                  "DSPSTKCL": {
+                    "DSPCLQTY": null,
+                    "DSPCLRATE": null,
+                    "DSPCLAMTA": "-298087.17"
+                  }
+                },
+                {
+                  "DSPSTKCL": {
+                    "DSPCLQTY": null,
+                    "DSPCLRATE": null,
+                    "DSPCLAMTA": "-17442.00"
+                  }
+                },
+                {
+                  "DSPSTKCL": {
+                    "DSPCLQTY": null,
+                    "DSPCLRATE": null,
+                    "DSPCLAMTA": "-242317.29"
+                  }
+                },
+                {
+                  "DSPSTKCL": {
+                    "DSPCLQTY": null,
+                    "DSPCLRATE": null,
+                    "DSPCLAMTA": "-19174.00"
+                  }
+                },
+                {
+                  "DSPSTKCL": {
+                    "DSPCLQTY": null,
+                    "DSPCLRATE": null,
+                    "DSPCLAMTA": "-137298.48"
+                  }
+                },
+                {
+                  "DSPSTKCL": {
+                    "DSPCLQTY": null,
+                    "DSPCLRATE": null,
+                    "DSPCLAMTA": "115476835.26"
+                  }
+                },
+                {
+                  "DSPSTKCL": {
+                    "DSPCLQTY": null,
+                    "DSPCLRATE": null,
+                    "DSPCLAMTA": "-26690.00"
+                  }
+                },
+                {
+                  "DSPSTKCL": {
+                    "DSPCLQTY": null,
+                    "DSPCLRATE": null,
+                    "DSPCLAMTA": "-215900.00"
+                  }
+                },
+                {
+                  "DSPSTKCL": {
+                    "DSPCLQTY": "273.000 Nos",
+                    "DSPCLRATE": "511.35",
+                    "DSPCLAMTA": "-139599.49"
+                  }
+                },
+                {
+                  "DSPSTKCL": {
+                    "DSPCLQTY": null,
+                    "DSPCLRATE": null,
+                    "DSPCLAMTA": "-2486395.11"
+                  }
+                },
+                {
+                  "DSPSTKCL": {
+                    "DSPCLQTY": null,
+                    "DSPCLRATE": null,
+                    "DSPCLAMTA": "-318304.86"
+                  }
+                },
+                {
+                  "DSPSTKCL": {
+                    "DSPCLQTY": null,
+                    "DSPCLRATE": null,
+                    "DSPCLAMTA": "-369000.60"
+                  }
+                },
+                {
+                  "DSPSTKCL": {
+                    "DSPCLQTY": "12.000 Nos",
+                    "DSPCLRATE": "2542.00",
+                    "DSPCLAMTA": "-30504.00"
+                  }
+                },
+                {
+                  "DSPSTKCL": {
+                    "DSPCLQTY": "32.000 Nos",
+                    "DSPCLRATE": "1114.35",
+                    "DSPCLAMTA": "-35659.20"
+                  }
+                },
+                {
+                  "DSPSTKCL": {
+                    "DSPCLQTY": null,
+                    "DSPCLRATE": null,
+                    "DSPCLAMTA": "-78983.15"
+                  }
+                },
+                {
+                  "DSPSTKCL": {
+                    "DSPCLQTY": "-63.000 Nos",
+                    "DSPCLRATE": "12379.42",
+                    "DSPCLAMTA": "-779903.24"
+                  }
+                },
+                {
+                  "DSPSTKCL": {
+                    "DSPCLQTY": null,
+                    "DSPCLRATE": null,
+                    "DSPCLAMTA": "-10512090.00"
+                  }
+                },
+                {
+                  "DSPSTKCL": {
+                    "DSPCLQTY": null,
+                    "DSPCLRATE": null,
+                    "DSPCLAMTA": "-835926.00"
+                  }
+                },
+                {
+                  "DSPSTKCL": {
+                    "DSPCLQTY": null,
+                    "DSPCLRATE": null,
+                    "DSPCLAMTA": "-8000000.00"
+                  }
+                },
+                {
+                  "DSPSTKCL": {
+                    "DSPCLQTY": null,
+                    "DSPCLRATE": null,
+                    "DSPCLAMTA": "-12010.34"
+                  }
+                },
+                {
+                  "DSPSTKCL": {
+                    "DSPCLQTY": null,
+                    "DSPCLRATE": null,
+                    "DSPCLAMTA": "-9143171.35"
+                  }
+                },
+                {
+                  "DSPSTKCL": {
+                    "DSPCLQTY": null,
+                    "DSPCLRATE": null,
+                    "DSPCLAMTA": "-11000.00"
+                  }
+                },
+                {
+                  "DSPSTKCL": {
+                    "DSPCLQTY": null,
+                    "DSPCLRATE": null,
+                    "DSPCLAMTA": "-1222443.27"
+                  }
+                },
+                {
+                  "DSPSTKCL": {
+                    "DSPCLQTY": null,
+                    "DSPCLRATE": null,
+                    "DSPCLAMTA": "-10588765.66"
+                  }
+                },
+                {
+                  "DSPSTKCL": {
+                    "DSPCLQTY": null,
+                    "DSPCLRATE": null,
+                    "DSPCLAMTA": "-340853.74"
+                  }
+                },
+                {
+                  "DSPSTKCL": {
+                    "DSPCLQTY": null,
+                    "DSPCLRATE": null,
+                    "DSPCLAMTA": "-20476.90"
+                  }
+                },
+                {
+                  "DSPSTKCL": {
+                    "DSPCLQTY": "-100.000 Mtr",
+                    "DSPCLRATE": null,
+                    "DSPCLAMTA": null
+                  }
+                },
+                {
+                  "DSPSTKCL": {
+                    "DSPCLQTY": "3.000 Nos",
+                    "DSPCLRATE": "25361.03",
+                    "DSPCLAMTA": "-76083.08"
+                  }
+                },
+                {
+                  "DSPSTKCL": {
+                    "DSPCLQTY": null,
+                    "DSPCLRATE": null,
+                    "DSPCLAMTA": "1900000.00"
+                  }
+                }
+              ]
+            }
+          }
+        }
+      ]
+    }
+  }
+}
