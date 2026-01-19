@@ -235,48 +235,49 @@ const MultiAPIQueryApp = () => {
   };
 
   const renderTable = (tableData, showMaximize = false) => {
-    if (!tableData || !tableData.headers || !tableData.rows) return null;
-    
-    return (
-      <div className="relative">
-        {showMaximize && (
-          <button
-            onClick={() => setFullscreenTable(tableData)}
-            className="absolute top-2 right-2 z-20 luxury-button text-white p-2 rounded-lg transition-all"
-            title="Maximize table"
-          >
-            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6v12h12v-4m7-7V3m0 0h-4m4 0v4" />
-            </svg>
-          </button>
-        )}
-        <div className="overflow-x-auto my-4 rounded-xl border border-amber-500/20">
-          <table className="w-full border-collapse">
-            <thead>
-              <tr className="bg-gradient-to-r from-amber-600/20 via-blue-600/20 to-amber-600/20">
-                {tableData.headers.map((h, i) => (
-                  <th key={i} className="border border-amber-400/30 px-4 py-3 text-left font-bold text-amber-100 uppercase tracking-wide">
-                    {h}
-                  </th>
+  if (!tableData || !tableData.headers || !tableData.rows) return null;
+  
+  return (
+    <div className="relative">
+      {showMaximize && (
+        <button
+          onClick={() => setFullscreenTable(tableData)}
+          className="absolute top-2 right-2 z-20 luxury-button text-white p-2 rounded-lg transition-all"
+          title="Maximize table"
+        >
+          <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6v12h12v-4m7-7V3m0 0h-4m4 0v4" />
+          </svg>
+        </button>
+      )}
+      {/* ADD SCROLLBAR WITH MAXHEIGHT */}
+      <div className="overflow-auto luxury-scroll my-4 rounded-xl border border-amber-500/20" style={{ maxHeight: '250px' }}>
+        <table className="w-full border-collapse">
+          <thead className="sticky top-0 z-10" style={{ backgroundColor: '#0f172a' }}>
+            <tr className="bg-gradient-to-r from-amber-600/20 via-blue-600/20 to-amber-600/20">
+              {tableData.headers.map((h, i) => (
+                <th key={i} className="border border-amber-400/30 px-4 py-3 text-left font-bold text-amber-100 uppercase tracking-wide">
+                  {h}
+                </th>
+              ))}
+            </tr>
+          </thead>
+          <tbody>
+            {tableData.rows.map((row, i) => (
+              <tr key={i} className="hover:bg-amber-500/5 transition-colors">
+                {row.map((cell, j) => (
+                  <td key={j} className="border border-slate-700/50 px-4 py-2 text-gray-200">
+                    {cell}
+                  </td>
                 ))}
               </tr>
-            </thead>
-            <tbody>
-              {tableData.rows.map((row, i) => (
-                <tr key={i} className="hover:bg-amber-500/5 transition-colors">
-                  {row.map((cell, j) => (
-                    <td key={j} className="border border-slate-700/50 px-4 py-2 text-gray-200">
-                      {cell}
-                    </td>
-                  ))}
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
+            ))}
+          </tbody>
+        </table>
       </div>
-    );
-  };
+    </div>
+  );
+};
 
   const VegaChart = ({ spec, containerId, onMaximize }) => {
     useEffect(() => {
@@ -652,7 +653,8 @@ const MultiAPIQueryApp = () => {
                 </button>
               </div>
               
-              <div className="flex-1 overflow-auto p-6 bg-slate-900/50">
+             <div className="flex-1 overflow-auto p-6 bg-slate-900/50 luxury-scroll-full">
+
                 <div id="fullscreen-vega" style={{ height: '100%', width: '100%' }}></div>
               </div>
             </div>
@@ -678,7 +680,7 @@ const MultiAPIQueryApp = () => {
         </button>
       </div>
       
-      <div className="flex-1 overflow-auto p-8 bg-slate-900">
+      <div className="flex-1 overflow-auto p-8 bg-slate-900 luxury-scroll-full">
         {fullscreenTable.type === 'markdown' ? (
           <div className="space-y-6">
             {/* Summary Section - FIXED */}
