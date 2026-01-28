@@ -354,8 +354,6 @@ def tool_graph_insights(input_str: str = "") -> str:
             ensure_ascii=False,
         )
    
-
-
     try:
         
         payload = parse_mixed_input(input_str)
@@ -1078,6 +1076,21 @@ CRITICAL RULES FOR GRAPH SUMMARIES:
 4. Use bullet points (-) for each month/item with its value
 5. Be SPECIFIC - include at least 5-10 data points
 
+MANDATORY FORMATTING (VISUAL STRUCTURE):
+
+Line 1: Final Answer: [Title/Overview]
+Line 2: [BLANK LINE - press Enter]
+Lines 3-N: Breakdown bullets (each starts with "- ")
+Line N+1: [BLANK LINE - press Enter]
+Line N+2: Key insight/highest/lowest
+Line N+3: [BLANK LINE - press Enter]
+Line N+4: ###GRAPH_SEPARATOR###
+Line N+5: [JSON]
+
+CRITICAL: Use BLANK LINES between sections for readability.
+Each bullet point MUST be on its own line.
+DO NOT write everything in one continuous line.
+
 CRITICAL: Once you write "Final Answer:", STOP immediately and do NOT write anything else.
 GOOD EXAMPLE (CORRECT):
 Final Answer: Projected cash outflow breakdown:
@@ -1097,7 +1110,20 @@ BAD EXAMPLE (WRONG):
 Final Answer: April has highest outflow at ₹93.6M.
 ###GRAPH_SEPARATOR###
 [JSON]
+ANOTHER BAD EXAMPLE (WRONG - NO LINE BREAKS):
+Final Answer: Cash outflow: - April: ₹X - May: ₹Y - June: ₹Z
 
+WHY WRONG: Everything in one line, no spacing, hard to read.
+
+CORRECT VERSION:
+Final Answer: Cash outflow breakdown:
+
+- April: ₹X
+- May: ₹Y
+- June: ₹Z
+
+Total: ₹XYZ
+# =====================================
 REMEMBER: The summary should have MULTIPLE lines showing the actual breakdown!
 ------------------ GENERAL REACT FORMAT ------------------
 FORMAT - FOLLOW EXACTLY:

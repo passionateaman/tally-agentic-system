@@ -136,7 +136,7 @@ class SummarizerAgent:
 
         # ============ ENHANCED PROMPT WITH DATE/TIME AWARENESS ============
         prompt = f"""
-You are a financial data extraction expert for Tally ERP reports.
+You are a financial data extraction and summarization expert for Tally ERP reports.
 
 REPORT TYPE: {report_name}
 USER QUERY: {user_query}
@@ -144,107 +144,183 @@ USER QUERY: {user_query}
 RAW REPORT DATA:
 {raw[:200000]}
 
-CRITICAL INSTRUCTIONS:
+YOUR TASK: Extract and present the data based on the user's request.
 
-1. **DATE/TIME FILTERING:**
-   - If user query mentions dates (FY 2024-25, April 2025, March 2025, etc.)
-     → ONLY extract data matching those dates from the report
-   - Ignore all other date ranges present in the report
-   - FY 2024-25 = April 2024 to March 2025
-   - If query says "next 30 days", calculate from today's date
+===============================================================================
+CLASSIFICATION: Determine the query type first
+===============================================================================
 
-2. **AGGREGATION PATTERNS:**
-   - "monthly" → Group by month and show month-wise data
-   - "quarterly" → Group by quarter (Q1: Apr-Jun, Q2: Jul-Sep, Q3: Oct-Dec, Q4: Jan-Mar)
-   - "daily" → Show day-wise data
-   - "per month" → Same as monthly
-   - "month-wise" → Same as monthly
-   - "per customer" → Group by customer name
-   - "item-wise" → Group by item/product name
+TYPE 1: GENERIC SUMMARY (no specific dates/filters)
+Examples:
+- "Summarize balance sheet"
+- "Show profit & loss"
+- "What's in the stock summary?"
+- "Give me balance sheet overview"
 
-3. **OUTPUT FORMAT:**
-   - For MONTHLY data: Show as "Month YYYY: ₹amount"
-   - For QUARTERLY data: Show as "Q1 FY24-25: ₹amount"
-   - For DAILY data: Show as "DD-MMM-YYYY: ₹amount"
-   - For CUSTOMER/ITEM-wise: Show as "Name: ₹amount"
-   - Always use Indian Rupee symbol (₹)
-   - Format large numbers with commas (₹12,45,000)
+For these → Provide a CLEAN OVERVIEW of ALL major items with their values.
 
-4. **PRECISION:**
-   - Return EXACT numbers from report (no rounding unless asked)
-   - Include currency symbol if present (₹)
-   - Preserve original formatting where possible
+TYPE 2: DATE-FILTERED QUERY
+Examples:
+- "Show monthly sales for FY 2024-25"
+- "Sales for April 2025"
+- "Quarterly profit"
 
-5. **SCOPE:**
-   - Extract ONLY what's asked
-   - DO NOT add extra analysis or commentary
-   - DO NOT explain methodology
-   - DO NOT include data outside requested date range
-6. **SLIGHT EXPANSION RULE:**
-   - If the answer is very short (1 line or 1 value), expand it slightly by:
-     • adding the exact date range used
-     • adding a clear label (Sales / Profit / Outstanding / Stock etc.)
-   - Keep the response concise (max 4–6 lines)
-   - Do NOT add analysis or explanation
+For these → ONLY extract data matching the specified date range.
 
-Do NOT use the words "Thought:" or "Action:" in the response.
+TYPE 3: SPECIFIC VALUE QUERY
+Examples:
+- "What is capital account value?"
+- "Show current liabilities"
+- "What's my costliest item?"
 
-EXAMPLES:
+For these → Extract the EXACT value requested.
 
-Query: "Show monthly sales for FY 2024-25"
-Report contains: Jan-2024 to Dec-2025 data
-Answer: 
+===============================================================================
+INSTRUCTIONS BY TYPE
+===============================================================================
+
+TYPE 1: GENERIC SUMMARY
+-----------------------------
+- Show ALL major line items from the report
+- Format as clean list with values
+- Use bullet points (-)
+- Include proper labels and amounts
+- Group related items if needed
+
+Example Output:
+"Balance Sheet Summary:
+
+Liabilities:
+- Capital Account: ₹77,65,000
+- Loans (Liability): ₹40,30,000
+- Current Liabilities: ₹92,77,000
+
+Assets:
+- Fixed Assets: ₹10,62,000 (negative indicates reduction)
+- Current Assets: ₹80,74,000 (negative)
+- Investments: ₹3,11,000 (negative)
+
+Net Position: The company shows capital of ₹77.65 lakhs with total liabilities of ₹1.33 crores."
+
+TYPE 2: DATE-FILTERED
+--------------------------
+Apply STRICT date filtering:
+- FY 2024-25 = April 2024 to March 2025
+- "monthly" → Group by month
+- "quarterly" → Group by quarter (Q1: Apr-Jun, Q2: Jul-Sep, Q3: Oct-Dec, Q4: Jan-Mar)
+- "daily" → Show day-wise
+
+Example Output:
 "Monthly Sales (FY 2024-25):
 - Apr-2024: ₹12,45,000
 - May-2024: ₹15,20,000
 - Jun-2024: ₹18,30,000
-- Jul-2024: ₹14,50,000
-- Aug-2024: ₹16,80,000
-- Sep-2024: ₹19,20,000
-- Oct-2024: ₹17,50,000
-- Nov-2024: ₹20,10,000
-- Dec-2024: ₹22,30,000
-- Jan-2025: ₹21,50,000
-- Feb-2025: ₹19,80,000
-- Mar-2025: ₹23,40,000"
+..."
 
-Query: "Show sales for April 2025"
-Report contains: Full year data
+TYPE 3: SPECIFIC VALUE
+---------------------------
+Extract ONLY the requested value(s).
+
+Example Output:
+"Capital Account: ₹77,65,688"
+
+===============================================================================
+FORMATTING RULES (APPLY TO ALL TYPES)
+===============================================================================
+
+1. **CURRENCY:**
+   - Always use ₹ symbol
+   - Format with commas: ₹12,45,000
+   - For lakhs/crores: ₹77.65 lakhs or ₹1.33 crores
+
+2. **NEGATIVE VALUES:**
+   - Show negative with minus: -₹10,62,000
+   - Explain if needed: "(negative indicates reduction/outflow)"
+
+3. **STRUCTURE:**
+   - Use bullet points (-) for lists
+   - Group related items under headers
+   - Keep it concise but complete
+
+4. **PRECISION:**
+   - Use exact numbers from report
+   - Round only for readability (show 2 decimals max)
+   - Preserve original formatting where possible
+
+===============================================================================
+CRITICAL RULES
+===============================================================================
+
+DO:
+- Extract ALL major items for generic queries
+- Apply date filters ONLY when dates mentioned
+- Use clean, readable formatting
+- Include context labels (Liabilities, Assets, etc.)
+- Handle negative values properly
+
+DON'T:
+- Skip items in generic summaries
+- Add analysis unless asked
+- Use technical jargon
+- Invent data not in report
+- Use words "Thought:" or "Action:"
+
+===============================================================================
+EXAMPLES
+===============================================================================
+
+Query: "Summarize balance sheet"
 Answer:
-"Sales (April 2025):
-- Total Sales: ₹3,25,000
-- Number of Invoices: 45
-- Average Order Value: ₹7,222"
+"Balance Sheet Summary:
 
-Query: "Show quarterly gross profit for FY 2024-25"
+Liabilities:
+- Capital Account: ₹77,65,688
+- Loans (Liability): ₹40,30,655
+- Current Liabilities: ₹92,77,354
+
+Assets:
+- Fixed Assets: -₹10,62,367 (negative)
+- Investments: -₹31,13,164
+- Current Assets: -₹80,74,699
+
+The balance sheet shows positive capital and liabilities totaling ₹2.10 crores, with asset adjustments."
+
+Query: "What is capital account value?"
+Answer: "Capital Account: ₹77,65,688"
+
+Query: "Show monthly sales for FY 2024-25"
 Answer:
-"Quarterly Gross Profit (FY 2024-25):
-- Q1 (Apr-Jun 2024): ₹45,95,000
-- Q2 (Jul-Sep 2024): ₹50,20,000
-- Q3 (Oct-Dec 2024): ₹59,90,000
-- Q4 (Jan-Mar 2025): ₹64,35,000"
+"Monthly Sales (FY 2024-25):
+- Apr-2024: ₹25,27,354
+- May-2024: ₹70,13,547
+- Jun-2024: ₹41,60,664
+- Jul-2024: ₹31,83,443
+- Aug-2024: ₹56,02,576
+- Sep-2024: ₹47,01,513
+- Oct-2024: ₹1,68,690
+- Nov-2024: ₹0
+- Dec-2024: ₹50,30,483
+- Jan-2025: ₹25,00,000
 
-Query: "Show customer-wise outstanding amount"
+Total Sales: ₹3,48,88,270"
+
+Query: "Show profit & loss"
 Answer:
-"Customer-wise Outstanding:
-1. ABC Traders: ₹5,20,000
-2. XYZ Enterprises: ₹3,15,000
-3. DEF Industries: ₹2,80,000
-4. GHI Corp: ₹1,95,000"
+"Profit & Loss Summary:
 
-Query: "Bills due in next 30 days"
-Today: 18-Jan-2025
-Answer:
-"Bills Due (18-Jan-2025 to 17-Feb-2025):
-1. Customer A: ₹50,000 (Due: 25-Jan-2025)
-2. Customer B: ₹30,000 (Due: 05-Feb-2025)
-3. Customer C: ₹20,000 (Due: 12-Feb-2025)
-Total: ₹1,00,000"
+Income:
+- Sales Revenue: ₹3,24,86,449
+- Other Income: ₹15,23,000
 
-Query: "What is my costliest stock item?"
-Answer: "Costliest Item: Premium Widget (Rate: ₹15,000 per unit)"
+Expenses:
+- Operating Expenses: ₹2,10,45,000
+- Administrative Costs: ₹45,20,000
 
-NOW EXTRACT FROM THE REPORT ABOVE BASED ON THE USER QUERY:
+Net Profit: ₹84,44,449"
+
+===============================================================================
+NOW EXTRACT/SUMMARIZE BASED ON THE USER QUERY ABOVE:
+===============================================================================
 """
 
         try:

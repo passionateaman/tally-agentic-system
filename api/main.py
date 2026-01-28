@@ -60,7 +60,14 @@ def clean_graph_output(raw_output: str) -> dict:
     
     try:
         parts = raw_output.split("###GRAPH_SEPARATOR###", 1)
-        summary_text = parts[0].strip()
+        summary_text = parts[0]
+    
+         # Remove "Final Answer: " prefix if present
+        if summary_text.startswith("Final Answer:"):
+            summary_text = summary_text[len("Final Answer:"):].strip()
+        
+        # Strip only leading/trailing whitespace, NOT internal newlines
+        summary_text = summary_text.strip()
         json_text = parts[1].strip()
         
         print(f"DEBUG: Raw json_text length: {len(json_text)} chars")
@@ -150,9 +157,9 @@ def clean_graph_output(raw_output: str) -> dict:
                 print(f"⚠️ Error parsing summary JSON: {e}")
                 summary_text = "Graph visualization generated successfully."
         
-        print(f"🔄 About to parse final JSON spec")
+        print(f"About to parse final JSON spec")
         spec = json.loads(json_text)
-        print(f"✅ Successfully parsed JSON spec, has $schema: {'$schema' in spec}")
+        print(f"Successfully parsed JSON spec, has $schema: {'$schema' in spec}")
         
         return {
             "output_type": "graph",
@@ -161,8 +168,8 @@ def clean_graph_output(raw_output: str) -> dict:
         }
         
     except json.JSONDecodeError as e:
-        print(f"❌ JSON DECODE ERROR: {e}")
-        print(f"❌ Problematic JSON text (first 500 chars):\n{json_text[:500] if 'json_text' in locals() else 'N/A'}")
+        print(f"JSON DECODE ERROR: {e}")
+        print(f"Problematic JSON text (first 500 chars):\n{json_text[:500] if 'json_text' in locals() else 'N/A'}")
         import traceback
         traceback.print_exc()
         return {
@@ -170,7 +177,7 @@ def clean_graph_output(raw_output: str) -> dict:
             "summary": f"Error: Invalid JSON in graph output. {str(e)}"
         }
     except Exception as e:
-        print(f"❌ ERROR in clean_graph_output: {type(e).__name__}: {e}")
+        print(f"ERROR in clean_graph_output: {type(e).__name__}: {e}")
         import traceback
         traceback.print_exc()
         return {
@@ -183,7 +190,7 @@ agent_lock = threading.Lock()
 def clean_react_output(text: str) -> str:
     text = re.sub(r"Action:\s*\nAction Input:\s*", "", text)
     text = re.sub(r"Observation:\s*", "", text)
-    return text.strip()
+    return text.strip()  
 
 def is_table_request(q: str) -> bool:
     q = q.lower()
@@ -250,6 +257,13 @@ CRITICAL REQUIREMENTS:
 - Use ₹ symbol for currency
 - Use exact numbers from data (with commas for readability)
 - Keep summary under 15 lines
+
+SPECIAL CASE – BILLS RECEIVABLE / PAYABLE SUMMARY:
+
+- If the report is Bills Receivable or Bills Payable:
+  - Show ONLY the TOP 10 parties in the breakdown
+  - Rank by absolute value (highest outstanding or count first)
+  - Do NOT list all rows, even if more data is available
 
 EXAMPLES:
 
@@ -330,6 +344,35 @@ IMPORTANT RULES:
 5. Highlight highest/lowest values
 6. Format large numbers with commas (₹12,45,000)
 
+STRUCTURED OUTPUT FORMAT (MANDATORY FOR ALL QUERIES, NO EXCEPTIONS):
+
+Return the summary in the following structure exactly:
+
+ANALYSIS SUMMARY:
+(one short sentence explaining what the data represents)
+
+MONTH-WISE / ITEM-WISE BREAKDOWN:
+- Use one bullet per label
+- Each bullet must be on a NEW LINE
+- Format strictly as:
+  - <Label>: ₹<Value>
+
+KEY INSIGHT:
+(one short line highlighting highest / lowest / trend)
+
+ABSOLUTE FORMATTING CONSTRAINT (NON-NEGOTIABLE):
+- DO NOT write long paragraphs
+- DO NOT combine multiple months/items in one line
+- ALWAYS put each value on a separate bullet line
+- Use clear line breaks between sections
+INVALID FORMAT (NEVER USE):
+April: ₹X - May: ₹Y - June: ₹Z
+
+VALID FORMAT (MUST FOLLOW):
+- April: ₹X
+- May: ₹Y
+- June: ₹Z
+
 NOW GENERATE SUMMARY WITH BREAKDOWN:
 """
 
@@ -396,14 +439,14 @@ def chat(req: ChatRequest):
     # ========== AUTOMATICALLY SET COMPANY ==========
     _SUPERVISOR_SINGLETON.set_active_company(HARDCODED_COMPANY)
     _SUPERVISOR_SINGLETON.current_user_query = req.query 
-    print(f"✅ Using company: {HARDCODED_COMPANY}")
-    print(f"📝 Query: {req.query}")
+    print(f"Using company: {HARDCODED_COMPANY}")
+    print(f"Query: {req.query}")
     # ===============================================
 
     # Table Request
     if is_table_request(req.query):
         try:
-            print("📊 Detected TABLE request")
+            print("Detected TABLE request")
             table = run_table_pipeline(
                 question=req.query,
                 company_name=HARDCODED_COMPANY
@@ -482,12 +525,19 @@ def chat(req: ChatRequest):
     )
 
     output = result.get("output") if isinstance(result, dict) else str(result)
-    output = clean_react_output(output)
 
-    # Clean and return
-    cleaned = clean_graph_output(output)
-    print(f"Response type: {cleaned['output_type']}")
-    return ChatResponse(**cleaned)
+# SAFETY GUARD
+    if isinstance(output, str) and "###GRAPH_SEPARATOR###" in output:
+        cleaned = clean_graph_output(output)
+        return ChatResponse(**cleaned)
+
+    # Normal text response
+    output = clean_react_output(output)
+    return ChatResponse(
+        output_type="text",
+        summary=output
+)
+
 
 # Health Check
 @app.get("/")

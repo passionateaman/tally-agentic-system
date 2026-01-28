@@ -1,3 +1,0 @@
-{
-  "error": "direct_call_failed: TypeError: BaseTool.__call__() got an unexpected keyword argument 'company_name'"
-}

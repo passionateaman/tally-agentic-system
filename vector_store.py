@@ -42,7 +42,7 @@ def setup_vector_db():
         {
             "id": "sale_01",
             "tally_name": "Sales Register",
-            "desc": "Sales Register. List of all sales invoices and transactions. Shows monthly sales performance and trends."
+            "desc": "Sales Register. List of all sales invoices and transactions. Shows monthly sales performance and trends, closing balance."
         },
         {
             "id": "tb_01",

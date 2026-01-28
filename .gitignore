@@ -1,8 +1,13 @@
+# Virtual env
 venv/
-.env
+
+# Vector DB
+tally_chroma_db/
+
+# Logs / transcripts
+transcripts/
+
+# Cache
 __pycache__/
-*.pyc
-*.log
-node_modules/
-dist/
-build/
+*.bin
+*.sqlite3

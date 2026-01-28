@@ -564,7 +564,7 @@ def normalize_report_tool(parsed: Any) -> Dict[str, Any]:
             else:
                 positive_dr += 1
 
-        # 🔑 Heuristic
+        #  Heuristic
         is_cash_flow = negative_dr >= 2
 
         rows = []
