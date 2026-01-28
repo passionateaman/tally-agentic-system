@@ -121,16 +121,6 @@ const MultiAPIQueryApp = () => {
       if (tableCandidate) out.table = tableCandidate;
     }
 
-    // For api2: if table is a markdown string, use it as summary with markdown output_type
-    if (!out.summary && raw.table && typeof raw.table === 'string' && raw.table.includes('|')) {
-      out.summary = raw.table;
-      out.output_type = out.output_type || 'markdown';
-    }
-    if (!out.summary && raw.raw_output && raw.raw_output.table && typeof raw.raw_output.table === 'string' && raw.raw_output.table.includes('|')) {
-      out.summary = raw.raw_output.table;
-      out.output_type = out.output_type || 'markdown';
-    }
-
     if (raw.vega_spec) out.vega_spec = raw.vega_spec;
     if (raw.vegaSpec) out.vegaSpec = raw.vegaSpec;
     if (raw.image_base64) out.image_base64 = raw.image_base64;
@@ -350,7 +340,7 @@ const MultiAPIQueryApp = () => {
       : null;
 
     const isApi1 = apiIndex === 1;
-    const isMarkdownTable = (isApi1 && outputType === 'markdown') || (apiIndex === 2 && outputType === 'markdown');
+    const isMarkdownTable = isApi1 && outputType === 'markdown';
 
     return (
       <div className="space-y-4">
@@ -477,45 +467,7 @@ const MultiAPIQueryApp = () => {
               <Sparkles className="w-4 h-4" />
               Response:
             </h4>
-            {apiIndex === 2 ? (
-              <div className="text-gray-200 leading-relaxed text-sm">
-                <ReactMarkdown
-                  remarkPlugins={[remarkGfm]}
-                  components={{
-                    table: ({ node, ...props }) => (
-                      <table className="w-full border-collapse text-sm md:text-base" {...props} />
-                    ),
-                    thead: ({ node, ...props }) => (
-                      <thead className="sticky top-0 z-10 bg-gradient-to-r from-amber-600/40 to-blue-600/40 backdrop-blur" {...props} />
-                    ),
-                    tr: ({ node, ...props }) => (
-                      <tr className="even:bg-slate-800/40 odd:bg-slate-900/40 hover:bg-amber-500/15 transition-colors" {...props} />
-                    ),
-                    th: ({ node, ...props }) => (
-                      <th className="border border-amber-400/30 px-4 py-3 text-left font-bold uppercase tracking-wide text-amber-100 whitespace-nowrap" {...props} />
-                    ),
-                    td: ({ node, children, ...props }) => {
-                      const text = Array.isArray(children) ? children.join('') : children;
-                      const isNumber = typeof text === 'string' && !isNaN(text.replace(/[,₹â¹\s]/g, ''));
-                      return (
-                        <td
-                          className={`border border-amber-400/20 px-4 py-2 ${
-                            isNumber ? 'text-right font-mono text-blue-300' : 'text-left text-gray-200'
-                          } whitespace-nowrap`}
-                          {...props}
-                        >
-                          {children}
-                        </td>
-                      );
-                    }
-                  }}
-                >
-                  {summary}
-                </ReactMarkdown>
-              </div>
-            ) : (
-              <p className="text-gray-200 leading-relaxed text-sm whitespace-pre-wrap">{summary}</p>
-            )}
+            <p className="text-gray-200 leading-relaxed text-sm whitespace-pre-wrap">{summary}</p>
           </div>
         )}
 

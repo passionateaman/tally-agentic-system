@@ -44,12 +44,45 @@ app.post('/relevancy', async (req, res) => {
   }
 
   const prompt = `
-Return ONLY JSON like:
-{"score": 0-100}
+You are an evaluator that scores the RELEVANCY of an answer to a query.
 
-Query: ${query}
-Answer: ${answerText}
+IMPORTANT CONTEXT:
+- The data is TALLY FINANCIAL DATA (Balance Sheet, Profit & Loss, Cash Flow, Ledgers).
+- The answer may contain financial summaries, tables, or charts/graphs (e.g., Vega-Lite).
+- Output format does NOT matter.
+- Graphs/tables are OPTIONAL unless the query explicitly asks for them.
+
+SCORING RULES:
+- Score between 0 and 100.
+- Evaluate relevance based on FINANCIAL CORRECTNESS and QUERY INTENT.
+- Give a HIGH score if:
+  - The financial question is correctly answered.
+  - A correct summary is present, even if only summary is returned.
+  - Graphs/tables support the summary or are reasonably related.
+- Give a MEDIUM score if:
+  - Summary is mostly correct but generic.
+  - Visualization exists but is loosely related.
+- Give a LOW score if:
+  - Financial values, ledgers, periods, or report types are incorrect.
+  - The answer ignores the query intent.
+
+DO NOT penalize:
+- Missing graphs when the summary is correct.
+- Formatting or presentation issues.
+- Extra financial insights beyond the query.
+
+STRICT OUTPUT:
+Return ONLY valid JSON.
+Example:
+{"score": 85}
+
+Query:
+${query}
+
+Answer:
+${answerText}
 `;
+
 
   let score = 0;
 
